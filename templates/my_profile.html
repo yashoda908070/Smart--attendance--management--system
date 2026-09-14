@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Profile</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+
+<body>
+
+```
+<nav class="navbar">
+
+    <div class="logo">
+        🎓 Attendance System
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/student-dashboard">Dashboard</a>
+        <a href="/my-attendance">My Attendance</a>
+        <a href="/my-percentage">My Percentage</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<main class="dashboard-container">
+
+    <div class="dashboard-header">
+
+        <h1>👤 My Profile</h1>
+
+        <p>View your student information</p>
+
+    </div>
+
+
+    <div class="profile-card">
+
+        <div class="profile-icon">
+            👨‍🎓
+        </div>
+
+        <h2>{{ student[1] }}</h2>
+
+        <div class="profile-details">
+
+            <p>
+                <strong>Student ID:</strong>
+                {{ student[0] }}
+            </p>
+
+            <p>
+                <strong>Name:</strong>
+                {{ student[1] }}
+            </p>
+
+            <p>
+                <strong>Branch:</strong>
+                {{ student[2] }}
+            </p>
+
+            <p>
+                <strong>Semester:</strong>
+                {{ student[3] }}
+            </p>
+
+            <p>
+                <strong>Username:</strong>
+                {{ student[4] }}
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="back-button">
+
+        <a href="/student-dashboard">
+
+            <button type="button">
+                ← Back to Dashboard
+            </button>
+
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Student Attendance Management System
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>

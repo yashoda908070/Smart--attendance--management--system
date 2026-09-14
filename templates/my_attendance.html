@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Attendance</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+
+<body>
+
+```
+<nav class="navbar">
+
+    <div class="logo">
+        🎓 Attendance System
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/student-dashboard">Dashboard</a>
+
+        <a href="/my-attendance">My Attendance</a>
+
+        <a href="/my-percentage">My Percentage</a>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<main class="page-container">
+
+    <div class="page-header">
+
+        <h1>📋 My Attendance</h1>
+
+        <p>Attendance records for {{ student_name }}</p>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Subject</th>
+                    <th>Date</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for record in records %}
+
+                <tr>
+
+                    <td>{{ record[0] }}</td>
+
+                    <td>{{ record[1] }}</td>
+
+                    <td>
+
+                        {% if record[2]|lower == "present" %}
+
+                            <span class="status present">
+                                ✓ Present
+                            </span>
+
+                        {% else %}
+
+                            <span class="status absent">
+                                ✕ Absent
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class="back-button">
+
+        <a href="/student-dashboard">
+
+            <button type="button">
+                ← Back to Dashboard
+            </button>
+
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Student Attendance Management System
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>

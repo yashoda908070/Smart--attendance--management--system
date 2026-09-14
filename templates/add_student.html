@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Student</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🎓 Attendance System
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/view-students">Students</a>
+
+        <a href="/view-attendance">Attendance</a>
+
+    </div>
+
+</nav>
+
+
+<!-- Page Content -->
+
+<main class="form-page">
+
+
+    <div class="page-header">
+
+        <h1>👨‍🎓 Add Student</h1>
+
+        <p>Register a new student in the attendance system</p>
+
+    </div>
+
+
+    <!-- Add Student Form -->
+
+    <form method="POST" action="/add-student">
+
+        <label for="student_id">
+            Student ID
+        </label>
+
+        <input
+            type="number"
+            id="student_id"
+            name="student_id"
+            placeholder="Enter student ID"
+            required
+        >
+
+
+        <label for="student_name">
+            Student Name
+        </label>
+
+        <input
+            type="text"
+            id="student_name"
+            name="student_name"
+            placeholder="Enter student name"
+            required
+        >
+
+
+        <label for="branch">
+            Branch
+        </label>
+
+        <input
+            type="text"
+            id="branch"
+            name="branch"
+            placeholder="Example: ECE"
+            required
+        >
+
+
+        <label for="semester">
+            Semester
+        </label>
+
+        <input
+            type="number"
+            id="semester"
+            name="semester"
+            placeholder="Enter semester"
+            min="1"
+            max="8"
+            required
+        >
+
+
+        <button type="submit" class="submit-btn">
+            + Add Student
+        </button>
+
+    </form>
+
+
+    <!-- Back Button -->
+
+    <div class="back-button">
+
+        <a href="/">
+
+            <button type="button">
+                ← Back to Home
+            </button>
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 Student Attendance Management System
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>
+
+
+    

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mark Attendance</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🎓 Attendance System
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/view-students">Students</a>
+
+        <a href="/view-attendance">Attendance</a>
+
+    </div>
+
+</nav>
+
+
+<!-- Page Content -->
+
+<main class="form-page">
+
+
+    <!-- Page Header -->
+
+    <div class="page-header">
+
+        <h1>✓ Mark Attendance</h1>
+
+        <p>Record student attendance</p>
+
+    </div>
+
+
+    <!-- Attendance Form -->
+
+    <form method="POST" action="/mark-attendance">
+
+
+        <!-- Student -->
+
+        <label for="student_id">
+            Student
+        </label>
+
+        <select id="student_id" name="student_id" required>
+
+            <option value="" disabled selected>
+                Select Student
+            </option>
+
+            {% for student in students %}
+
+                <option value="{{ student[0] }}">
+                    {{ student[1] }} - {{ student[0] }}
+                </option>
+
+            {% endfor %}
+
+        </select>
+
+
+        <!-- Subject -->
+
+        <label for="subject_id">
+            Subject
+        </label>
+
+        <select id="subject_id" name="subject_id" required>
+
+            <option value="" disabled selected>
+                Select Subject
+            </option>
+
+            {% for subject in subjects %}
+
+                <option value="{{ subject[0] }}">
+                    {{ subject[1] }}
+                </option>
+
+            {% endfor %}
+
+        </select>
+
+
+        <!-- Attendance Date -->
+
+        <label for="attendance_date">
+            Attendance Date
+        </label>
+
+        <input
+            type="date"
+            id="attendance_date"
+            name="attendance_date"
+            required
+        >
+
+
+        <!-- Status -->
+
+        <label for="status">
+            Attendance Status
+        </label>
+
+        <select id="status" name="status" required>
+
+            <option value="Present">
+                ✓ Present
+            </option>
+
+            <option value="Absent">
+                ✕ Absent
+            </option>
+
+        </select>
+
+
+        <!-- Submit -->
+
+        <button type="submit" class="submit-btn">
+            ✓ Mark Attendance
+        </button>
+
+    </form>
+
+
+    <!-- Back Button -->
+
+    <div class="back-button">
+
+        <a href="/">
+
+            <button type="button">
+                ← Back to Home
+            </button>
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 Student Attendance Management System
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>

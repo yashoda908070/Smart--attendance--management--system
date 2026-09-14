@@ -1,0 +1,223 @@
+<!-- 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Percentage</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>Attendance Percentage</h1>
+
+    <table>
+
+        <tr>
+            <th>Student Name</th>
+            <th>Subject</th>
+            <th>Total Classes</th>
+            <th>Attended Classes</th>
+            <th>Attendance Percentage</th>
+        </tr>
+
+        {% for record in records %}
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+            <td>{{ record[3] }}</td>
+            <td>{{ record[4] }}%</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    <br>
+
+    <a href="/">
+       <button type="button">Back to Home</button>
+    </a>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Attendance Percentage</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🎓 Attendance System
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/view-students">Students</a>
+
+        <a href="/view-attendance">Attendance</a>
+
+    </div>
+
+</nav>
+
+
+<!-- Page Content -->
+
+<main class="page-container">
+
+
+    <!-- Page Header -->
+
+    <div class="page-header">
+
+        <h1>📊 Attendance Report</h1>
+
+        <p>Monitor student attendance performance</p>
+
+    </div>
+
+
+    <!-- Attendance Table -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Student Name</th>
+
+                    <th>Subject</th>
+
+                    <th>Total Classes</th>
+
+                    <th>Attended Classes</th>
+
+                    <th>Attendance</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% for record in records %}
+
+                <tr>
+
+                    <td>{{ record[0] }}</td>
+
+                    <td>{{ record[1] }}</td>
+
+                    <td>{{ record[2] }}</td>
+
+                    <td>{{ record[3] }}</td>
+
+
+                    <td>
+
+                        <strong class="percentage">
+
+                            {{ record[4] }}%
+
+                        </strong>
+
+                    </td>
+
+
+                    <td>
+
+                        {% if record[4] >= 75 %}
+
+                            <span class="attendance-good">
+                                ✓ Good
+                            </span>
+
+                        {% elif record[4] >= 60 %}
+
+                            <span class="attendance-warning">
+                                ⚠ Warning
+                            </span>
+
+                        {% else %}
+
+                            <span class="attendance-low">
+                                ✕ Low
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- Back Button -->
+
+    <div class="back-button">
+
+        <a href="/">
+
+            <button type="button">
+                ← Back to Home
+            </button>
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 Student Attendance Management System
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🎓 Attendance System
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/student-dashboard">Dashboard</a>
+
+        <a href="/my-attendance">My Attendance</a>
+
+        <a href="/my-percentage">My Percentage</a>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</nav>
+
+
+<!-- Student Dashboard -->
+
+<main class="dashboard-container">
+
+    <div class="dashboard-header">
+
+        <h1>👋 Welcome, {{ student_name }}</h1>
+
+        <p>
+            View your attendance and academic information
+        </p>
+
+    </div>
+
+
+    <!-- Dashboard Cards -->
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                📋
+            </div>
+
+            <h2>My Attendance</h2>
+
+            <p>
+                View your complete attendance records
+            </p>
+
+            <a href="/my-attendance">
+
+                <button>
+                    View Attendance
+                </button>
+
+            </a>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                📊
+            </div>
+
+            <h2>My Percentage</h2>
+
+            <p>
+                Check your subject-wise attendance percentage
+            </p>
+
+            <a href="/my-percentage">
+
+                <button>
+                    View Percentage
+                </button>
+
+            </a>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                👤
+            </div>
+
+            <h2>My Profile</h2>
+
+            <p>
+                View your student information
+            </p>
+
+            <a href="/my-profile">
+
+                <button>
+                    View Profile
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Logout -->
+
+    <div class="dashboard-logout">
+
+        <a href="/logout">
+
+            <button>
+                🚪 Logout
+            </button>
+
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 Student Attendance Management System
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>
+
