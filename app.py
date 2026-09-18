@@ -1,14 +1,16 @@
 from flask import Flask, render_template, request, session, redirect, url_for
+import os
 import mysql.connector
 
 app = Flask(__name__)
 app.secret_key = "student_attendance_secret_key"
 
 connection = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="YashuHalli@2005",
-    database="attendance_system"
+    host=os.environ.get("MYSQLHOST"),
+    user=os.environ.get("MYSQLUSER"),
+    password=os.environ.get("MYSQLPASSWORD"),
+    database=os.environ.get("MYSQLDATABASE")
+  
 )
 
 cursor = connection.cursor()
