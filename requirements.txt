@@ -1,2 +1,4 @@
 Flask
-mysql-connector-python==26.7.0
+mysql-connector-python
+gunicorn
+

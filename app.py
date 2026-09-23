@@ -511,7 +511,7 @@ def attendance_percentage():
     )
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
     
 
 
