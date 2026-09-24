@@ -11,7 +11,7 @@ connection = mysql.connector.connect(
     user=os.environ.get("MYSQLUSER"),
     password=os.environ.get("MYSQLPASSWORD"),
     database=os.environ.get("MYSQLDATABASE"),
-    ssl_verify_cert=True
+    ssl_verify_cert=False
 )
   
 
