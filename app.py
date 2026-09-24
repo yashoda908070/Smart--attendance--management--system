@@ -10,7 +10,8 @@ connection = mysql.connector.connect(
     port=int(os.environ.get("MYSQLPORT", 12142)),
     user=os.environ.get("MYSQLUSER"),
     password=os.environ.get("MYSQLPASSWORD"),
-    database=os.environ.get("MYSQLDATABASE")
+    database=os.environ.get("MYSQLDATABASE"),
+    ssl_verify_cert=True
 )
   
 
