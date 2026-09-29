@@ -514,6 +514,13 @@ def attendance_percentage():
         records=records
     )
 
+@app.errorhandler(Exception)
+def handle_exception(e):
+    import traceback
+    print("LOGIN/APP ERROR:", flush=True)
+    traceback.print_exc()
+    return "Internal server error. Check Render logs.", 500
+
 if __name__ == "__main__":
     app.run()
     
