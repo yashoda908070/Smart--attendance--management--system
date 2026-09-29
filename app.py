@@ -33,6 +33,7 @@ def home():
 def login():
 
     if request.method == "POST":
+        print("LOGIN POST RECEIVED", flush=True)
 
         username = request.form["username"]
         password = request.form["password"]
